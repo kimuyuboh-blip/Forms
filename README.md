@@ -19,8 +19,9 @@ This is a document exlpaining the 'how to' in implementing a structured HTML for
 You will learn how to create a functional HTML implementation of a 'User registration form' using semantic HTML structure.
 
 
-  
+ 
 1. First Phase. This begins our HTML framework. We need this at the beginning of every HTML document we work on for better functionality.  
+
 ```
 <!doctype html>
 <html lang="en">
@@ -33,11 +34,20 @@ You will learn how to create a functional HTML implementation of a 'User registr
     <header>
       <h1>User Registration Form</h1>
     </header>
-   ```
-2. Now we dive into the meat of our HTML document. The 'main' semantic tag is the portion of this document that the User will interact with.
-   Here we divide the the Form into 'section'- 3 sections to be exact. This lets us interact with the document in 3 parts and makes it much easier to debug,
-   edit and run. 
-   ```
+
+```
+
+2. Now we dive into the meat of our HTML document. The 'main' semantic tag is the portion of this document that the User will interact     with.
+   Here we divide the the Form into 'section'- 4 sections to be exact. This lets us interact with the document in 3 parts and makes it     much easier to debug, edit and run.
+    <ul>
+      <li>Section- Personal Information</li>
+      <li>Section- Contact Information</li>
+      <li>Section- Preferences and Interests</li>
+      <li>Section- Feedback and Additional Information</li>
+    </ul>
+</li>
+   
+```
     <main>
       <section>
         <h4>Personal Information</h4>
@@ -293,10 +303,27 @@ You will learn how to create a functional HTML implementation of a 'User registr
       </section>
     </main>
 
+```
+
+3. 'Section' - Personal Information.<br>
+   This is a submit form because the user will fill in data and 'submit' it. That is why we use _'method="post"_. Each and every _label_
+   is followed by _input_.<br>
+   
+   The _'label'_ element in HTML is used to define a label for form elements like <strong>  text fields, checkboxes, radio buttons,        etc</strong>. It enhances accessibility by linking descriptive text to form controls, making it easier for users (especially those      using assistive technologies) to interact with forms.<br>
+   
+   The <input> tag in HTML is a versatile element used to create interactive controls for web forms, allowing users to input data. It      supports a variety of input types and attributes to customize its behavior. Throughout this document we use different types of input    types namely: text, password, email, number, checkbox, radio (button), range, file (upload) and submit (button). This is followed bt    a set of attributes which adds certain fuctions e.g
+     <ul>
+        <li>name: Identifies the input field.</li>
+        <li>placeholder: Displays a hint inside the input field.</li>
+        <li>value: Sets a default value.</li>
+        <li>required: Makes the field mandatory.</li>
+        <li>disabled: Disables the input field.</li>
+        <li>readonly: Makes the field read-only.</li>
+     </ul>
+ 
+ 
    ```
-4. First section tag: 
-   ```
-    <section>
+     <section>
         <h4>Personal Information</h4>
         <form action="submit_form.php" method="POST">
           <label for="first name">First Name:</label>
@@ -346,9 +373,111 @@ You will learn how to create a functional HTML implementation of a 'User registr
           />
         </form>
       </section>
-   ```
-5. Second section tag:
-   ```
+
+
+      ```
+
+
+4. Section: Contact Information.<br>
+   Here we introduce a dropdown option by using the 'select' element. The _'select'_ element in HTML is used to create a drop-down menu    that allows users to select one or more options. It is commonly used in forms for user input. <br>
+
+   <strong>Key Points</strong><br>
+   <ul>
+      <li>'select': Defines the drop-down menu.</li>
+      <li>'option': Represents each item in the menu.</li>
+  </ul><br>
+
+  <strong>Attributes</strong>:<br>
+  <ul>
+      <li>name: Identifies the drop-down for form submission.</li>
+      <li>value: Specifies the value sent to the server when an option is selected.</li>
+      <li>selected: Pre-selects an option by default.</li>
+      <li>multiple: Allows selecting multiple options.</li>
+    </ul>
+
+      
+```
+   
+   <section>
+        <h4>Contact Information</h4>
+        <form action="submit_form.php" method="POST">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="stonemichael@gmail.com"
+            required
+          /><br /><br />
+
+          <label for="tel">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone number"
+            name="phone number"
+            placeholder="+254700065331"
+            required
+          /><br /><br />
+
+          <label for="website">Personal Website:</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            placeholder="https://yahoo.com"
+          /><br /><br />
+
+          <label for="country">Country:</label>
+          <select id="country" name="country" required>
+            <option value="select">--Select Country Here--</option>
+            <option value="kenya">Kenya</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+            <option value="india">India</option>
+            <option value="uganda">Uganda</option>
+            <option value="tanzania">Tanzania</option>
+            <option value="rwanda">Rwanda</option>
+            <option value="south africa">South Africa</option>
+            <option value="nigeria">Nigeria</option></select
+          ><br /><br />
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" /><br /><br />
+
+          <label for="address">Street Address: </label>
+          <input type="text" id="address" name="address" /><br /><br />
+
+          <label for="zip code">Zip Postal Code:</label>
+          <input
+            type="text"
+            id="zip code"
+            name="zip code"
+            placeholder="00100"
+          /><br /><br />
+
+          <label for="contact-time">Preffered Contact Time:</label>
+          <input
+            type="time"
+            id="contact-time"
+            name="contact-time"
+            required
+          /><br /><br />
+        </form>
+      </section>
+
+
+```
+
+<br>
+
+
+5.  Section: Preferences and Interests.
+
+
+
+```
     <section>
         <h4>Prefferences & Interests</h4>
         <form action="submit_form.php" method="POST"></form>
@@ -431,10 +560,17 @@ You will learn how to create a functional HTML implementation of a 'User registr
           required
         /><br /><br />
       </section>
-   ```
   
-6. Last Section tag:
-   ```
+
+```
+<br>
+
+
+6. Section: Feedback and Additional Information.
+
+
+
+```
     <section>
         <form action="submit_form.php" method="POST"></form>
         <h4>Feedback & Additional Information</h4>
@@ -484,13 +620,24 @@ You will learn how to create a functional HTML implementation of a 'User registr
         <input type="checkbox" id="privacy" name="privacy" required />
         <label for="privacy">I agree to the Privacy Policy</label><br /><br />
       </section>
-    
-7. Adding a 'footer' tag to close the form:
- ```
+
+
+```
+<br>
+
+
+7. Adding a 'footer' tag to close the form. The _'button'_ is used to create interactive and clickable buttons on a webpage. These
+buttons can perform various actions enhancing user interaction.
+
+
+
+```
+
  <footer>
       <button name="one" value="register">Register</button>
       <button name="two" value="clear">Clear Form</button>
-    </footer>
+ </footer>
+
 ```
 
 <!-- USAGE EXAMPLES -->
