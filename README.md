@@ -1,9 +1,3 @@
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
 <h3 align="center"><strong>Building Forms With Semantic HTML</strong></h3>
 
@@ -15,7 +9,7 @@
 
 ### Built With
 
-* [![HTML][HTML]][HTML-url]
+* HTML with Semantic Structure.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -25,57 +19,490 @@ This is a document exlpaining the 'how to' in implementing a structured HTML for
 You will learn how to create a functional HTML implementation of a 'User registration form' using semantic HTML structure.
 
 
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
+  
+1. First Phase. This begins our HTML framework. We need this at the beginning of every HTML document we work on for better functionality.  
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration-Form</title>
+  </head>
+  <body>
+    <header>
+      <h1>User Registration Form</h1>
+    </header>
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+2. Now we dive into the meat of our HTML document. The 'main' semantic tag is the portion of this document that the User will interact with.
+   Here we divide the the Form into 'section'- 3 sections to be exact. This lets us interact with the document in 3 parts and makes it much easier to debug,
+   edit and run. 
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+    <main>
+      <section>
+        <h4>Personal Information</h4>
+        <form action="submit_form.php" method="POST">
+          <label for="first name">First Name:</label>
+          <input
+            type="text"
+            id="first name"
+            name="first name"
+            placeholder="Michael"
+            required
+          /><br /><br />
+
+          <label for="last name">Last Name:</label>
+          <input
+            type="last name"
+            id="last name"
+            name="last name"
+            placeholder="Stone"
+            required
+          /><br /><br />
+
+          <label for="date of birth">Date of Birth:</label>
+          <input type="date" id="date" name="date" required /><br /><br />
+
+          <label for="age">Age:</label>
+          <input
+            type="age"
+            id="age"
+            name="age"
+            placeholder="24"
+            required
+          /><br /><br />
+
+          <label for="gender">Gender</label><br />
+          <label for="male"
+            ><input type="radio" name="male" value="male" />Male</label
+          ><br />
+          <label for="female"
+            ><input type="radio" name="female" value="female" />Female</label
+          ><br /><br />
+
+          <label for="fileInput" class="Upload">Profile Photo:</label>
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            onchange="previewImage(event)"
+          />
+        </form>
+      </section>
+
+      <section>
+        <h4>Contact Information</h4>
+        <form action="submit_form.php" method="POST">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="stonemichael@gmail.com"
+            required
+          /><br /><br />
+
+          <label for="tel">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone number"
+            name="phone number"
+            placeholder="+254700065331"
+            required
+          /><br /><br />
+
+          <label for="website">Personal Website:</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            placeholder="https://yahoo.com"
+          /><br /><br />
+
+          <label for="country">Country:</label>
+          <select id="country" name="country" required>
+            <option value="select">--Select Country Here--</option>
+            <option value="kenya">Kenya</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+            <option value="india">India</option>
+            <option value="uganda">Uganda</option>
+            <option value="tanzania">Tanzania</option>
+            <option value="rwanda">Rwanda</option>
+            <option value="south africa">South Africa</option>
+            <option value="nigeria">Nigeria</option></select
+          ><br /><br />
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" /><br /><br />
+
+          <label for="address">Street Address: </label>
+          <input type="text" id="address" name="address" /><br /><br />
+
+          <label for="zip code">Zip Postal Code:</label>
+          <input
+            type="text"
+            id="zip code"
+            name="zip code"
+            placeholder="00100"
+          /><br /><br />
+
+          <label for="contact-time">Preffered Contact Time:</label>
+          <input
+            type="time"
+            id="contact-time"
+            name="contact-time"
+            required
+          /><br /><br />
+        </form>
+      </section>
+
+      <section>
+        <h4>Prefferences & Interests</h4>
+        <form action="submit_form.php" method="POST"></form>
+        <label for="color">Favourite Colour</label>
+        <input type="color" id="color" value="color" /><br /><br />
+
+        <label for="number">Experience Level (1-10)</label>
+        <input
+          type="range"
+          id="number"
+          min="0"
+          max="10"
+          step="1"
+          value="5"
+        /><br /><br />
+
+        <label for="birth">Birth Month:</label>
+        <input type="date" id="birth" name="birth" /><br /><br />
+
+        <label for="date">Available Week:</label>
+        <input type="date" id="date" name="date" /><br /><br />
+
+        <label for="search">Search Keywords:</label>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Enter Keywords"
+        /><br /><br />
+
+        <label for="Interests">Interests (Select all that apply):</label><br />
+        <input type="checkbox" id="sports" name="sports" value="sports" />
+        <label for="sports">Sports</label><br />
+        <input type="checkbox" id="music" name="music" value="music" />
+        <label for="music">Music</label><br />
+        <input type="checkbox" id="travel" name="travel" value="travel" />
+        <label for="travel">Travel</label><br />
+        <input type="checkbox" id="reading" name="reading" value="reading" />
+        <label for="reading">Reading</label><br />
+        <input type="checkbox" id="gaming" name="gaming" value="gaming" />
+        <label for="gaming">Gaming</label><br />
+        <input type="checkbox" id="cooking" name="cooking" value="cooking" />
+        <label for="cooking">Cooking</label><br />
+        <input
+          type="checkbox"
+          id="technology"
+          name="technology"
+          value="technology"
+        />
+        <label for="technology">Technology</label><br />
+        <input type="checkbox" id="trading" name="trading" value="trading" />
+        <label for="trading">Trading</label><br /><br />
+
+        <label for="label">Education Level:</label>
+        <select id="label" name="label" required>
+          <option value="select">--Select Educational Level Here--</option>
+          <option value="primary">Primary</option>
+          <option value="high school">High School</option>
+          <option value="course">Technical Course</option>
+          <option value="diploma">Diploma</option>
+          <option value="bachelors">Bachelors</option>
+          <option value="masters">Masters</option>
+          <option value="phd">PhD</option></select
+        ><br /><br />
+
+        <label for="pwd">Create Password:</label>
+        <input
+          type="password"
+          id="pwd"
+          name="pwd"
+          placeholder="12qwed/.,"
+          required
+        /><br /><br />
+        <label for="confirm">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm"
+          name="confirm"
+          placeholder="12qwed/.,"
+          required
+        /><br /><br />
+      </section>
+
+      <section>
+        <form action="submit_form.php" method="POST"></form>
+        <h4>Feedback & Additional Information</h4>
+        <label for="bio">Tell us about yourself:</label><br />
+        <textarea
+          id="bio"
+          name="bio"
+          rows="5"
+          cols="50"
+          placeholder="Write a brief description about yourself..."
+        ></textarea
+        ><br /><br />
+
+        <label for="Information">Suggestions for improvement:</label><br />
+        <textarea
+          id="Information"
+          name="Information"
+          rows="5"
+          cols="50"
+          placeholder="Your suggestions..."
+        ></textarea
+        ><br /><br />
+
+        <label for="date">Registration Date & Time:</label>
+        <input type="datetime-local" id="date" name="date" /><br /><br />
+
+        <label for="input">How did you hear about us:</label>
+        <select name="input" id="input">
+          <option value="select">--Select Source--</option>
+          <option value="friends">Friends & Family</option>
+          <option value="social media">Social Media</option>
+          <option value="posters">Posters</option>
+          <option value="online ads">Online Ads</option>
+          <br /><br /></select
+        ><br /><br />
+
+        <label for="resume">Upload Resume (Optional):</label>
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" /><br /><br />
+
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        <label for="subscribe">Subscribe to Our Newsletter</label><br /><br />
+
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms">I agree to the Terms and Conditions</label
+        ><br /><br />
+
+        <input type="checkbox" id="privacy" name="privacy" required />
+        <label for="privacy">I agree to the Privacy Policy</label><br /><br />
+      </section>
+    </main>
+
    ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+4. First section tag: 
    ```
+    <section>
+        <h4>Personal Information</h4>
+        <form action="submit_form.php" method="POST">
+          <label for="first name">First Name:</label>
+          <input
+            type="text"
+            id="first name"
+            name="first name"
+            placeholder="Michael"
+            required
+          /><br /><br />
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+          <label for="last name">Last Name:</label>
+          <input
+            type="last name"
+            id="last name"
+            name="last name"
+            placeholder="Stone"
+            required
+          /><br /><br />
 
+          <label for="date of birth">Date of Birth:</label>
+          <input type="date" id="date" name="date" required /><br /><br />
 
+          <label for="age">Age:</label>
+          <input
+            type="age"
+            id="age"
+            name="age"
+            placeholder="24"
+            required
+          /><br /><br />
+
+          <label for="gender">Gender</label><br />
+          <label for="male"
+            ><input type="radio" name="male" value="male" />Male</label
+          ><br />
+          <label for="female"
+            ><input type="radio" name="female" value="female" />Female</label
+          ><br /><br />
+
+          <label for="fileInput" class="Upload">Profile Photo:</label>
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            onchange="previewImage(event)"
+          />
+        </form>
+      </section>
+   ```
+5. Second section tag:
+   ```
+    <section>
+        <h4>Prefferences & Interests</h4>
+        <form action="submit_form.php" method="POST"></form>
+        <label for="color">Favourite Colour</label>
+        <input type="color" id="color" value="color" /><br /><br />
+
+        <label for="number">Experience Level (1-10)</label>
+        <input
+          type="range"
+          id="number"
+          min="0"
+          max="10"
+          step="1"
+          value="5"
+        /><br /><br />
+
+        <label for="birth">Birth Month:</label>
+        <input type="date" id="birth" name="birth" /><br /><br />
+
+        <label for="date">Available Week:</label>
+        <input type="date" id="date" name="date" /><br /><br />
+
+        <label for="search">Search Keywords:</label>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Enter Keywords"
+        /><br /><br />
+
+        <label for="Interests">Interests (Select all that apply):</label><br />
+        <input type="checkbox" id="sports" name="sports" value="sports" />
+        <label for="sports">Sports</label><br />
+        <input type="checkbox" id="music" name="music" value="music" />
+        <label for="music">Music</label><br />
+        <input type="checkbox" id="travel" name="travel" value="travel" />
+        <label for="travel">Travel</label><br />
+        <input type="checkbox" id="reading" name="reading" value="reading" />
+        <label for="reading">Reading</label><br />
+        <input type="checkbox" id="gaming" name="gaming" value="gaming" />
+        <label for="gaming">Gaming</label><br />
+        <input type="checkbox" id="cooking" name="cooking" value="cooking" />
+        <label for="cooking">Cooking</label><br />
+        <input
+          type="checkbox"
+          id="technology"
+          name="technology"
+          value="technology"
+        />
+        <label for="technology">Technology</label><br />
+        <input type="checkbox" id="trading" name="trading" value="trading" />
+        <label for="trading">Trading</label><br /><br />
+
+        <label for="label">Education Level:</label>
+        <select id="label" name="label" required>
+          <option value="select">--Select Educational Level Here--</option>
+          <option value="primary">Primary</option>
+          <option value="high school">High School</option>
+          <option value="course">Technical Course</option>
+          <option value="diploma">Diploma</option>
+          <option value="bachelors">Bachelors</option>
+          <option value="masters">Masters</option>
+          <option value="phd">PhD</option></select
+        ><br /><br />
+
+        <label for="pwd">Create Password:</label>
+        <input
+          type="password"
+          id="pwd"
+          name="pwd"
+          placeholder="12qwed/.,"
+          required
+        /><br /><br />
+        <label for="confirm">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm"
+          name="confirm"
+          placeholder="12qwed/.,"
+          required
+        /><br /><br />
+      </section>
+   ```
+  
+6. Last Section tag:
+   ```
+    <section>
+        <form action="submit_form.php" method="POST"></form>
+        <h4>Feedback & Additional Information</h4>
+        <label for="bio">Tell us about yourself:</label><br />
+        <textarea
+          id="bio"
+          name="bio"
+          rows="5"
+          cols="50"
+          placeholder="Write a brief description about yourself..."
+        ></textarea
+        ><br /><br />
+
+        <label for="Information">Suggestions for improvement:</label><br />
+        <textarea
+          id="Information"
+          name="Information"
+          rows="5"
+          cols="50"
+          placeholder="Your suggestions..."
+        ></textarea
+        ><br /><br />
+
+        <label for="date">Registration Date & Time:</label>
+        <input type="datetime-local" id="date" name="date" /><br /><br />
+
+        <label for="input">How did you hear about us:</label>
+        <select name="input" id="input">
+          <option value="select">--Select Source--</option>
+          <option value="friends">Friends & Family</option>
+          <option value="social media">Social Media</option>
+          <option value="posters">Posters</option>
+          <option value="online ads">Online Ads</option>
+          <br /><br /></select
+        ><br /><br />
+
+        <label for="resume">Upload Resume (Optional):</label>
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" /><br /><br />
+
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        <label for="subscribe">Subscribe to Our Newsletter</label><br /><br />
+
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms">I agree to the Terms and Conditions</label
+        ><br /><br />
+
+        <input type="checkbox" id="privacy" name="privacy" required />
+        <label for="privacy">I agree to the Privacy Policy</label><br /><br />
+      </section>
+    
+7. Adding a 'footer' tag to close the form:
+ ```
+ <footer>
+      <button name="one" value="register">Register</button>
+      <button name="two" value="clear">Clear Form</button>
+    </footer>
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+With semantic structure in your HTML code you can easily design any form. Semantic tags like 'header', 'main', 'section', and 'article' explicitly define the role of content blocks.
+Benefits:
+<ul>
+     <li>SEO: Search engines crawl and index more effectively when content is structured semantically.</li>
+     <li>Accessibility: Screen readers and assistive technologies interpret semantic HTML to improve navigation.</li>
+     <li>Maintainability: Developers can write cleaner, more structured, and reusable code.</li>
+</ul>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -91,19 +518,11 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/@KimuyuCarlos) - email@email_client.com
+Your Name - [@KimuyuCarlos](https://twitter.com/@KimuyuCarlos) - kimuyuboh@email.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-ds.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+Project Link: [https://github.com/kimuyuboh-blip/Forms.git](https://github.com/kimuyuboh-blip/Forms.git)
+<br><br>
