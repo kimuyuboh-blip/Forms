@@ -669,7 +669,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@KimuyuCarlos](https://twitter.com/@KimuyuCarlos) - kimuyuboh@email.com
+X Handle: [@KimuyuCarlos](https://twitter.com/@KimuyuCarlos) 
+
+Gmail: kimuyuboh@gmail.com
 
 Project Link: [https://github.com/kimuyuboh-blip/Forms.git](https://github.com/kimuyuboh-blip/Forms.git)
-<br><br>
+
