@@ -311,7 +311,7 @@ You will learn how to create a functional HTML implementation of a 'User registr
    
    The _'label'_ element in HTML is used to define a label for form elements like <strong>  text fields, checkboxes, radio buttons,        etc</strong>. It enhances accessibility by linking descriptive text to form controls, making it easier for users (especially those      using assistive technologies) to interact with forms.<br>
    
-   The <input> tag in HTML is a versatile element used to create interactive controls for web forms, allowing users to input data. It      supports a variety of input types and attributes to customize its behavior. Throughout this document we use different types of input    types namely: text, password, email, number, checkbox, radio (button), range, file (upload) and submit (button). This is followed bt    a set of attributes which adds certain fuctions e.g
+   The _'input'_ tag in HTML is a versatile element used to create interactive controls for web forms, allowing users to input data. It      supports a variety of input types and attributes to customize its behavior. Throughout this document we use different types of input    types namely: text, password, email, number, checkbox, radio (button), range, file (upload) and submit (button). This is followed bt    a set of attributes which adds certain fuctions e.g
      <ul>
         <li>name: Identifies the input field.</li>
         <li>placeholder: Displays a hint inside the input field.</li>
@@ -640,6 +640,122 @@ buttons can perform various actions enhancing user interaction.
 
 ```
 
+
+# Form Styling with CSS Variables
+
+This project demonstrates professional **CSS form styling** using **custom properties (variables)** for a scalable, maintainable, and consistent color system.  
+The design focuses on readability, accessibility, and clean visual hierarchy using shadows, borders, and modern color combinations.
+
+---
+
+## CSS Implementation Notes
+
+The CSS applies best practices including:
+
+- Use of **CSS custom properties (`--variable-name`)** for global color management  
+- Consistent **spacing**, **font hierarchy**, and **alignment**  
+- Responsive input widths and accessible contrast  
+- Smooth **hover transitions** and **button interactivity**  
+- Modular, maintainable code organized by element type
+
+---
+
+## Color Palette Documentation
+
+| Variable | Description | Hex Value | Usage |
+|-----------|--------------|-----------|--------|
+| `--color-bg` | Background color | `#f9fafb` | Body background |
+| `--color-border` | Border color | `#d1d5db` | Inputs, sections, general borders |
+| `--color-text-muted` | Muted text color | `#6b7280` | Footer text, hover text |
+| `--color-primary` | Main blue | `#2563eb` | Buttons |
+| `--color-primary-light` | Light blue hover | `#3b82f6` | Button hover (variant 1) |
+| `--color-primary-dark` | Deep blue hover | `#1e40af` | Button hover (variant 2) |
+| `--color-accent-violet` | Violet accent | `#8b5cf6` | File input, color picker |
+| `--color-accent-pink` | Pink accent | `#ec4899` | Shadow highlight |
+| `--shadow-primary` | Dual shadow | Uses violet & pink | Container shadow |
+
+All colors were chosen to create a **balanced, modern look** with strong contrast and visual appeal.
+
+---
+
+##  Design Decisions Explanation
+
+###  Color System
+- Soft neutral background (`#f9fafb`) for readability  
+- Blue tones symbolize **trust and professionalism**  
+- Violet-pink shadows add **depth and creativity**
+
+###  Layout
+- Centered container with `max-width: 600px` for focus  
+- Consistent spacing and border application  
+- Subtle **box shadows** to elevate form visuals
+
+###  Typography
+- **Arial, sans-serif** for clean readability  
+- Hierarchical font sizes for headings (`h1`, `h4`) and inputs  
+
+###  Interactions
+- Buttons change color smoothly on hover  
+- Inputs have clear focus areas and accessible contrast  
+
+---
+
+
+##  Styling Approach
+
+This project follows a **modular CSS methodology** with:
+- Reusable **CSS variables** defined under `:root`  
+- Logical grouping of selectors (inputs, buttons, sections, etc.)  
+- **Separation of concerns**: structure in HTML, presentation in CSS  
+- Responsive sizing using `%` and `px` units  
+- Focus on clarity, simplicity, and consistency
+
+**Technologies used:**
+- Pure CSS3 (no frameworks)
+- CSS Variables (`:root`)
+- Modern transitions and hover effects
+
+---
+
+##  Features Implemented
+
+-  CSS Custom Properties for color theming  
+-  Dual-tone **box shadows** with violet & pink  
+-  Smooth **hover transitions** for interactive elements  
+-  Consistent **border and spacing** across inputs  
+-  Styled input types (`text`, `email`, `color`, `file`, etc.)  
+-  Responsive form container with maximum width  
+-  Simple, professional visual structure
+
+---
+
+##  Browser Compatibility
+
+This stylesheet uses only widely supported CSS features.
+
+| Browser | Compatibility |
+|----------|---------------|
+| 🟢 Chrome | ✅ Fully supported |
+| 🟣 Firefox | ✅ Fully supported |
+| 🔵 Edge | ✅ Fully supported |
+| 🍎 Safari | ✅ Fully supported |
+
+No vendor prefixes required — all features conform to the CSS3 standard.
+
+---
+
+##  Screenshots and Form Description
+
+<img src="screenshot.png" alt="Image of form document">
+
+### Description
+The styled form presents a **light, minimalist interface** with vibrant accent shadows.  
+All input types are consistently styled, ensuring a uniform look and feel.  
+Buttons feature engaging hover effects, and the overall form maintains a **professional and accessible aesthetic**.
+
+---
+
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -668,6 +784,10 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- CONTACT -->
 ## Contact
+
+### Author
+**Carlos Kimuyu**  
+Programming Student | Passionate about Clean Design and Modern Web Development 
 
 X Handle: [@KimuyuCarlos](https://twitter.com/@KimuyuCarlos) 
 

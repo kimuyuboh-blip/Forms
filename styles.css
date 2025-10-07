@@ -1,0 +1,150 @@
+/* Root Variables for colors */
+:root {
+  /* Base Colors */
+  --color-bg: #f9fafb;
+  --color-border: #d1d5db;
+  --color-text-muted: #6b7280;
+
+  /* Primary Palette */
+  --color-primary: #2563eb;      /* main button blue */
+  --color-primary-light: #3b82f6; /* hover blue */
+  --color-primary-dark: #1e40af;  /* deep hover blue */
+
+  /* Accent Colors */
+  --color-accent-violet: #8b5cf6;
+  --color-accent-pink: #ec4899;
+
+  /* Shadows */
+  --shadow-primary: 20px 20px 60px var(--color-accent-violet),
+  -20px -20px 60px var(--color-accent-pink);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--color-bg);
+  max-width: 600px;
+  box-shadow: var(--shadow-primary);
+  border: 1px solid var(--color-border);
+  align-items: center;
+}
+
+
+section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
+  border: 1px solid var(--color-border);
+  width: 40%;
+  height: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+select {
+  border: 1px solid var(--color-border);
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+textarea {
+  border: 1px solid var(--color-border);
+  width: 90%;
+  height: 110px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 1px solid var(--color-border);
+  width: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+input[type="file"] {
+  background-color: var(--color-accent-violet);
+  color: white;
+  padding: 10px 20px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  cursor: pointer;
+  margin: 10px 0;
+  width: 60%;
+}
+
+input[type="color"] {
+  background-color: var(--color-accent-violet);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+  width: 20%;
+}
+
+footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 20px;
+  font-size: 40px;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+  width: 30%;
+  transition: background-color 0.5s ease;
+}
+
+button[name="one"]:hover {
+  background-color: var(--color-primary-light);
+  color: #1f2937;
+}
+
+button[name="two"]:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-muted);
+}
