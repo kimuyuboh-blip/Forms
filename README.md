@@ -1,6 +1,7 @@
-📄 Semantic Registration Form — README (Rewritten & Improved)
-<h3 align="center"><strong>User Registration Form Built With Semantic HTML & Modern CSS</strong></h3> <p align="center"> A complete guide to creating and styling semantic, accessible, and well-structured HTML forms. </p>
-🚀 Overview
+<h3 align="center"><strong>User Registration Form Built With Semantic HTML & CSS</strong></h3> 
+<p align="center"> A complete guide to creating and styling semantic, accessible, and well-structured HTML forms. </p>
+
+Overview
 
 This project demonstrates how to build a fully semantic registration form and apply professional, scalable CSS styling using:
 
@@ -16,7 +17,7 @@ Modern button styling, shadows, and interactive effects
 
 The goal is to teach clear structure, accessibility, and clean styling architecture.
 
-🏗 Built With
+Built With
 
 Semantic HTML5
 
@@ -24,7 +25,7 @@ CSS3 with Custom Properties
 
 No frameworks or external libraries
 
-📘 Getting Started
+Getting Started
 
 This documentation walks you through the structure and styling of the form found in:
 
@@ -46,7 +47,7 @@ How CSS variables create a scalable color system
 
 How the layout, spacing, borders, and shadows are applied
 
-🧩 1. Semantic HTML Structure
+1. Semantic HTML Structure
 
 The form uses a clear hierarchical structure:
 
@@ -77,7 +78,7 @@ Improves maintainability (sections are clear and manageable)
 
 Supports consistent styling (fieldsets, legends, headers)
 
-🧱 2. Section-by-Section Explanation
+2. Section-by-Section Explanation
 A. Personal Information Fieldset
 
 Contains fundamental personal details:
@@ -170,11 +171,11 @@ E. Footer Button Section
 
 The footer wraps the form actions, keeping structure clean and predictable.
 
-🎨 3. CSS Styling System
+3. CSS Styling System
 
 All styles originate in styles.css and follow a modular structure using CSS variables.
 
-🎨 CSS Variable System (Color Palette)
+CSS Variable System (Color Palette)
 
 Defined in :root:
 
@@ -282,16 +283,18 @@ Register → primary-light (blue)
 
 Clear → primary-dark (deep blue)
 
-🧠 5. Design Principles Used
+5. Design Principles Used
 ✔ Semantic structure
 ✔ Consistent spacing and alignment
 ✔ Variable-driven color architecture
 ✔ Clean visual hierarchy
 ✔ Accessible input types
 ✔ Minimalist modern UI
-📸 Screenshot
+
+Screenshot
 <img src="forms.png" alt="Form Preview">
-📚 Usage
+
+Usage
 
 Use this template to build clean, extensible, semantic forms.
 Semantic HTML provides:
@@ -304,12 +307,12 @@ Improved search engine indexing
 
 Easier maintenance and upgrades
 
-🤝 Contributing
+Contributing
 
 Contributions are welcome!
 Fork → Branch → Commit → PR.
 
-📬 Contact
+Contact
 
 Carlos Kimuyu
 Programming Student | Clean & Modern Web Design
