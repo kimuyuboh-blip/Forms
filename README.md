@@ -29,10 +29,11 @@ You will learn how to create a functional HTML implementation of a 'User registr
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration-Form</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
-      <h1>User Registration Form</h1>
+      <legend id="legend1">User Registration Form</legend>
     </header>
 
 ```
@@ -48,46 +49,60 @@ You will learn how to create a functional HTML implementation of a 'User registr
 </li>
    
 ```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration-Form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <legend id="legend1">User Registration Form</legend>
+    </header>
     <main>
-      <section>
-        <h4>Personal Information</h4>
-        <form action="submit_form.php" method="POST">
-          <label for="first name">First Name:</label>
+      <form action="submit_form.php" method="POST" enctype="multipart/form-data" autocomplete="on">
+        <fieldset>
+          <legend>Personal Information</legend>    
+          <label for="first-name">First Name:</label>
           <input
             type="text"
-            id="first name"
-            name="first name"
+            id="first-name"
+            name="first-name"
             placeholder="Michael"
+            autocomplete="given-name"
             required
           /><br /><br />
 
-          <label for="last name">Last Name:</label>
+          <label for="last-name">Last Name:</label>
           <input
-            type="last name"
-            id="last name"
-            name="last name"
+            type="text"
+            id="last-name"
+            name="last-name"
             placeholder="Stone"
+            autocomplete="family-name"
             required
           /><br /><br />
 
-          <label for="date of birth">Date of Birth:</label>
-          <input type="date" id="date" name="date" required /><br /><br />
+          <label for="date-birth">Date of Birth:</label>
+          <input type="date" id="date-birth" name="date-birth" autocomplete="date-birth" required /><br /><br />
 
           <label for="age">Age:</label>
           <input
-            type="age"
+            type="text"
             id="age"
             name="age"
             placeholder="24"
             required
           /><br /><br />
 
-          <label for="gender">Gender</label><br />
-          <label for="male"
-            ><input type="radio" name="male" value="male" />Male</label
+          <p>Gender</p>
+          <label for="male">
+          <input type="radio" id="male" name="gender" value="male" />Male</label
           ><br />
           <label for="female"
-            ><input type="radio" name="female" value="female" />Female</label
+            ><input type="radio" id="female" name="gender" value="female" />Female</label
           ><br /><br />
 
           <label for="fileInput" class="Upload">Profile Photo:</label>
@@ -97,27 +112,27 @@ You will learn how to create a functional HTML implementation of a 'User registr
             accept="image/*"
             onchange="previewImage(event)"
           />
-        </form>
-      </section>
+        </fieldset>
 
-      <section>
-        <h4>Contact Information</h4>
-        <form action="submit_form.php" method="POST">
+        <fieldset>
+          <legend>Contact Information</legend>
           <label for="email">Email:</label>
           <input
             type="email"
             id="email"
             name="email"
             placeholder="stonemichael@gmail.com"
+            autocomplete="email"
             required
           /><br /><br />
 
-          <label for="tel">Phone Number:</label>
+          <label for="phone-number">Phone Number:</label>
           <input
             type="tel"
-            id="phone number"
-            name="phone number"
+            id="phone-number"
+            name="phone-number"
             placeholder="+254700065331"
+            autocomplete="tel"
             required
           /><br /><br />
 
@@ -127,10 +142,11 @@ You will learn how to create a functional HTML implementation of a 'User registr
             id="website"
             name="website"
             placeholder="https://yahoo.com"
+            autocomplete="url"
           /><br /><br />
 
           <label for="country">Country:</label>
-          <select id="country" name="country" required>
+          <select id="country" name="country" autocomplete="country-name" required>
             <option value="select">--Select Country Here--</option>
             <option value="kenya">Kenya</option>
             <option value="usa">USA</option>
@@ -146,162 +162,150 @@ You will learn how to create a functional HTML implementation of a 'User registr
           ><br /><br />
 
           <label for="city">City:</label>
-          <input type="text" id="city" name="city" /><br /><br />
+          <input type="text" id="city" name="city" autocomplete="address-level2" /><br /><br />
 
           <label for="address">Street Address: </label>
-          <input type="text" id="address" name="address" /><br /><br />
+          <input type="text" id="address" name="address" autocomplete="street-address" /><br /><br />
 
-          <label for="zip code">Zip Postal Code:</label>
-          <input
-            type="text"
-            id="zip code"
-            name="zip code"
-            placeholder="00100"
-          /><br /><br />
+          <label for="zip-code">Zip Postal Code:</label>
+          <input type="text" id="zip-code" name="zip-code" placeholder="00100" autocomplete="postal-code" />
+          
+          <br /><br />
 
           <label for="contact-time">Preffered Contact Time:</label>
+          <input type="time" id="contact-time" name="contact-time" required />
+          <br /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Prefferences & Interests</legend>
+          <label for="color">Favourite Colour:</label>
+          <input type="color" id="color" value="#8b5cf6" /><br /><br />
+
+          <label for="number">Experience Level (1-10)</label>
+          <input type="range" id="number" min="0" max="10" step="1" value="5" />
+          
+          <br /><br />
+
+          <label for="birth">Birth Month:</label>
+          <input type="date" id="birth" name="birth" /><br /><br />
+
+          <label for="date-week">Available Week:</label>
+          <input type="date" id="date-week" name="date-week" /><br /><br />
+
+          <label for="search">Search Keywords:</label>
+          <input type="search" id="search" name="search" placeholder="Enter Keywords" />
+          
+          <br /><br />
+
+          <p>Interests (Select all that apply):</p>
+          <input type="checkbox" id="sports" name="interests" value="sports" />
+          <label for="sports">Sports</label><br />
+          <input type="checkbox" id="music" name="interests" value="music" />
+          <label for="music">Music</label><br />
+          <input type="checkbox" id="travel" name="interests" value="travel" />
+          <label for="travel">Travel</label><br />
+          <input type="checkbox" id="reading" name="interests" value="reading" />
+          <label for="reading">Reading</label><br />
+          <input type="checkbox" id="gaming" name="interests" value="gaming" />
+          <label for="gaming">Gaming</label><br />
+          <input type="checkbox" id="cooking" name="interests" value="cooking" />
+          <label for="cooking">Cooking</label><br />
+          <input type="checkbox" id="technology" name="interests" value="technology" />
+          <label for="technology">Technology</label><br />
+          <input type="checkbox" id="trading" name="interests" value="trading" />
+          <label for="trading">Trading</label><br /><br />
+
+          <label for="label">Education Level:</label>
+          <select id="label" name="label" required>
+            <option value="select">--Select Educational Level Here--</option>
+            <option value="primary">Primary</option>
+            <option value="high school">High School</option>
+            <option value="course">Technical Course</option>
+            <option value="diploma">Diploma</option>
+            <option value="bachelors">Bachelors</option>
+            <option value="masters">Masters</option>
+            <option value="phd">PhD</option></select
+          ><br /><br />
+
+          <label for="pwd">Create Password:</label>
           <input
-            type="time"
-            id="contact-time"
-            name="contact-time"
+            type="password"
+            id="pwd"
+            name="pwd"
+            placeholder="12qwed/.,"
+            autocomplete="new-password"
             required
           /><br /><br />
-        </form>
-      </section>
+          <label for="confirm">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm"
+            name="confirm"
+            placeholder="12qwed/.,"
+            autocomplete="new-password"
+            required
+          /><br /><br />
+        </fieldset>
 
-      <section>
-        <h4>Prefferences & Interests</h4>
-        <form action="submit_form.php" method="POST"></form>
-        <label for="color">Favourite Colour</label>
-        <input type="color" id="color" value="color" /><br /><br />
+        <fieldset>
+          <legend>Feedback & Additional Information</legend>
+          <label for="bio">Tell us about yourself:</label><br />
+          <textarea
+            id="bio"
+            name="bio"
+            rows="5"
+            cols="50"
+            placeholder="Write a brief description about yourself..."
+          ></textarea
+          ><br /><br />
 
-        <label for="number">Experience Level (1-10)</label>
-        <input
-          type="range"
-          id="number"
-          min="0"
-          max="10"
-          step="1"
-          value="5"
-        /><br /><br />
+          <label for="Information">Suggestions for improvement:</label><br />
+          <textarea
+            id="Information"
+            name="Information"
+            rows="5"
+            cols="50"
+            placeholder="Your suggestions..."
+          ></textarea
+          ><br /><br />
 
-        <label for="birth">Birth Month:</label>
-        <input type="date" id="birth" name="birth" /><br /><br />
+          <label for="date-register">Registration Date & Time:</label>
+          <input type="datetime-local" id="date-register" name="date-register" /><br /><br />
 
-        <label for="date">Available Week:</label>
-        <input type="date" id="date" name="date" /><br /><br />
+          <label for="input">How did you hear about us:</label>
+          <select name="input" id="input">
+            <option value="select">--Select Source--</option>
+            <option value="friends">Friends & Family</option>
+            <option value="social media">Social Media</option>
+            <option value="posters">Posters</option>
+            <option value="online ads">Online Ads</option>
+            <br /><br /></select
+          ><br /><br />
 
-        <label for="search">Search Keywords:</label>
-        <input
-          type="search"
-          id="search"
-          name="search"
-          placeholder="Enter Keywords"
-        /><br /><br />
+          <label for="resume">Upload Resume (Optional):</label>
+          <input type="file" id="resume" accept=".pdf,.doc,.docx" /><br /><br />
 
-        <label for="Interests">Interests (Select all that apply):</label><br />
-        <input type="checkbox" id="sports" name="sports" value="sports" />
-        <label for="sports">Sports</label><br />
-        <input type="checkbox" id="music" name="music" value="music" />
-        <label for="music">Music</label><br />
-        <input type="checkbox" id="travel" name="travel" value="travel" />
-        <label for="travel">Travel</label><br />
-        <input type="checkbox" id="reading" name="reading" value="reading" />
-        <label for="reading">Reading</label><br />
-        <input type="checkbox" id="gaming" name="gaming" value="gaming" />
-        <label for="gaming">Gaming</label><br />
-        <input type="checkbox" id="cooking" name="cooking" value="cooking" />
-        <label for="cooking">Cooking</label><br />
-        <input
-          type="checkbox"
-          id="technology"
-          name="technology"
-          value="technology"
-        />
-        <label for="technology">Technology</label><br />
-        <input type="checkbox" id="trading" name="trading" value="trading" />
-        <label for="trading">Trading</label><br /><br />
+          <input type="checkbox" id="subscribe" name="subscribe" />
+          <label for="subscribe">Subscribe to Our Newsletter</label><br /><br />
 
-        <label for="label">Education Level:</label>
-        <select id="label" name="label" required>
-          <option value="select">--Select Educational Level Here--</option>
-          <option value="primary">Primary</option>
-          <option value="high school">High School</option>
-          <option value="course">Technical Course</option>
-          <option value="diploma">Diploma</option>
-          <option value="bachelors">Bachelors</option>
-          <option value="masters">Masters</option>
-          <option value="phd">PhD</option></select
-        ><br /><br />
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">I agree to the Terms and Conditions</label
+          ><br /><br />
 
-        <label for="pwd">Create Password:</label>
-        <input
-          type="password"
-          id="pwd"
-          name="pwd"
-          placeholder="12qwed/.,"
-          required
-        /><br /><br />
-        <label for="confirm">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirm"
-          name="confirm"
-          placeholder="12qwed/.,"
-          required
-        /><br /><br />
-      </section>
+          <input type="checkbox" id="privacy" name="privacy" required />
+          <label for="privacy">I agree to the Privacy Policy</label><br /><br />
 
-      <section>
-        <form action="submit_form.php" method="POST"></form>
-        <h4>Feedback & Additional Information</h4>
-        <label for="bio">Tell us about yourself:</label><br />
-        <textarea
-          id="bio"
-          name="bio"
-          rows="5"
-          cols="50"
-          placeholder="Write a brief description about yourself..."
-        ></textarea
-        ><br /><br />
+        </fieldset>
 
-        <label for="Information">Suggestions for improvement:</label><br />
-        <textarea
-          id="Information"
-          name="Information"
-          rows="5"
-          cols="50"
-          placeholder="Your suggestions..."
-        ></textarea
-        ><br /><br />
-
-        <label for="date">Registration Date & Time:</label>
-        <input type="datetime-local" id="date" name="date" /><br /><br />
-
-        <label for="input">How did you hear about us:</label>
-        <select name="input" id="input">
-          <option value="select">--Select Source--</option>
-          <option value="friends">Friends & Family</option>
-          <option value="social media">Social Media</option>
-          <option value="posters">Posters</option>
-          <option value="online ads">Online Ads</option>
-          <br /><br /></select
-        ><br /><br />
-
-        <label for="resume">Upload Resume (Optional):</label>
-        <input type="file" id="resume" accept=".pdf,.doc,.docx" /><br /><br />
-
-        <input type="checkbox" id="subscribe" name="subscribe" />
-        <label for="subscribe">Subscribe to Our Newsletter</label><br /><br />
-
-        <input type="checkbox" id="terms" name="terms" required />
-        <label for="terms">I agree to the Terms and Conditions</label
-        ><br /><br />
-
-        <input type="checkbox" id="privacy" name="privacy" required />
-        <label for="privacy">I agree to the Privacy Policy</label><br /><br />
-      </section>
+        <footer>
+          <button name="one" value="register">Register</button>
+          <button name="two" value="clear">Clear Form</button>
+        </footer>
+      </form>
     </main>
+  </body>
+</html>
 
 ```
 
@@ -323,45 +327,46 @@ You will learn how to create a functional HTML implementation of a 'User registr
  
  
    ```
-     <section>
-        <h4>Personal Information</h4>
-        <form action="submit_form.php" method="POST">
-          <label for="first name">First Name:</label>
+        <fieldset>
+          <legend>Personal Information</legend>    
+          <label for="first-name">First Name:</label>
           <input
             type="text"
-            id="first name"
-            name="first name"
+            id="first-name"
+            name="first-name"
             placeholder="Michael"
+            autocomplete="given-name"
             required
           /><br /><br />
 
-          <label for="last name">Last Name:</label>
+          <label for="last-name">Last Name:</label>
           <input
-            type="last name"
-            id="last name"
-            name="last name"
+            type="text"
+            id="last-name"
+            name="last-name"
             placeholder="Stone"
+            autocomplete="family-name"
             required
           /><br /><br />
 
-          <label for="date of birth">Date of Birth:</label>
-          <input type="date" id="date" name="date" required /><br /><br />
+          <label for="date-birth">Date of Birth:</label>
+          <input type="date" id="date-birth" name="date-birth" autocomplete="date-birth" required /><br /><br />
 
           <label for="age">Age:</label>
           <input
-            type="age"
+            type="text"
             id="age"
             name="age"
             placeholder="24"
             required
           /><br /><br />
 
-          <label for="gender">Gender</label><br />
-          <label for="male"
-            ><input type="radio" name="male" value="male" />Male</label
+          <p>Gender</p>
+          <label for="male">
+          <input type="radio" id="male" name="gender" value="male" />Male</label
           ><br />
           <label for="female"
-            ><input type="radio" name="female" value="female" />Female</label
+            ><input type="radio" id="female" name="gender" value="female" />Female</label
           ><br /><br />
 
           <label for="fileInput" class="Upload">Profile Photo:</label>
@@ -371,8 +376,7 @@ You will learn how to create a functional HTML implementation of a 'User registr
             accept="image/*"
             onchange="previewImage(event)"
           />
-        </form>
-      </section>
+        </fieldset>
 
 
       ```
@@ -397,25 +401,25 @@ You will learn how to create a functional HTML implementation of a 'User registr
 
       
 ```
-   
-   <section>
-        <h4>Contact Information</h4>
-        <form action="submit_form.php" method="POST">
+        <fieldset>
+          <legend>Contact Information</legend>
           <label for="email">Email:</label>
           <input
             type="email"
             id="email"
             name="email"
             placeholder="stonemichael@gmail.com"
+            autocomplete="email"
             required
           /><br /><br />
 
-          <label for="tel">Phone Number:</label>
+          <label for="phone-number">Phone Number:</label>
           <input
             type="tel"
-            id="phone number"
-            name="phone number"
+            id="phone-number"
+            name="phone-number"
             placeholder="+254700065331"
+            autocomplete="tel"
             required
           /><br /><br />
 
@@ -425,10 +429,11 @@ You will learn how to create a functional HTML implementation of a 'User registr
             id="website"
             name="website"
             placeholder="https://yahoo.com"
+            autocomplete="url"
           /><br /><br />
 
           <label for="country">Country:</label>
-          <select id="country" name="country" required>
+          <select id="country" name="country" autocomplete="country-name" required>
             <option value="select">--Select Country Here--</option>
             <option value="kenya">Kenya</option>
             <option value="usa">USA</option>
@@ -444,28 +449,20 @@ You will learn how to create a functional HTML implementation of a 'User registr
           ><br /><br />
 
           <label for="city">City:</label>
-          <input type="text" id="city" name="city" /><br /><br />
+          <input type="text" id="city" name="city" autocomplete="address-level2" /><br /><br />
 
           <label for="address">Street Address: </label>
-          <input type="text" id="address" name="address" /><br /><br />
+          <input type="text" id="address" name="address" autocomplete="street-address" /><br /><br />
 
-          <label for="zip code">Zip Postal Code:</label>
-          <input
-            type="text"
-            id="zip code"
-            name="zip code"
-            placeholder="00100"
-          /><br /><br />
+          <label for="zip-code">Zip Postal Code:</label>
+          <input type="text" id="zip-code" name="zip-code" placeholder="00100" autocomplete="postal-code" />
+          
+          <br /><br />
 
           <label for="contact-time">Preffered Contact Time:</label>
-          <input
-            type="time"
-            id="contact-time"
-            name="contact-time"
-            required
-          /><br /><br />
-        </form>
-      </section>
+          <input type="time" id="contact-time" name="contact-time" required />
+          <br /><br />
+        </fieldset>
 
 
 ```
@@ -473,153 +470,134 @@ You will learn how to create a functional HTML implementation of a 'User registr
 <br>
 
 
-5.  Section: Preferences and Interests.
+5.  Fieldset: Preferences and Interests.
 
 
 
 ```
-    <section>
-        <h4>Prefferences & Interests</h4>
-        <form action="submit_form.php" method="POST"></form>
-        <label for="color">Favourite Colour</label>
-        <input type="color" id="color" value="color" /><br /><br />
+        <fieldset>
+          <legend>Prefferences & Interests</legend>
+          <label for="color">Favourite Colour:</label>
+          <input type="color" id="color" value="#8b5cf6" /><br /><br />
 
-        <label for="number">Experience Level (1-10)</label>
-        <input
-          type="range"
-          id="number"
-          min="0"
-          max="10"
-          step="1"
-          value="5"
-        /><br /><br />
+          <label for="number">Experience Level (1-10)</label>
+          <input type="range" id="number" min="0" max="10" step="1" value="5" />
+          
+          <br /><br />
 
-        <label for="birth">Birth Month:</label>
-        <input type="date" id="birth" name="birth" /><br /><br />
+          <label for="birth">Birth Month:</label>
+          <input type="date" id="birth" name="birth" /><br /><br />
 
-        <label for="date">Available Week:</label>
-        <input type="date" id="date" name="date" /><br /><br />
+          <label for="date-week">Available Week:</label>
+          <input type="date" id="date-week" name="date-week" /><br /><br />
 
-        <label for="search">Search Keywords:</label>
-        <input
-          type="search"
-          id="search"
-          name="search"
-          placeholder="Enter Keywords"
-        /><br /><br />
+          <label for="search">Search Keywords:</label>
+          <input type="search" id="search" name="search" placeholder="Enter Keywords" />
+          
+          <br /><br />
 
-        <label for="Interests">Interests (Select all that apply):</label><br />
-        <input type="checkbox" id="sports" name="sports" value="sports" />
-        <label for="sports">Sports</label><br />
-        <input type="checkbox" id="music" name="music" value="music" />
-        <label for="music">Music</label><br />
-        <input type="checkbox" id="travel" name="travel" value="travel" />
-        <label for="travel">Travel</label><br />
-        <input type="checkbox" id="reading" name="reading" value="reading" />
-        <label for="reading">Reading</label><br />
-        <input type="checkbox" id="gaming" name="gaming" value="gaming" />
-        <label for="gaming">Gaming</label><br />
-        <input type="checkbox" id="cooking" name="cooking" value="cooking" />
-        <label for="cooking">Cooking</label><br />
-        <input
-          type="checkbox"
-          id="technology"
-          name="technology"
-          value="technology"
-        />
-        <label for="technology">Technology</label><br />
-        <input type="checkbox" id="trading" name="trading" value="trading" />
-        <label for="trading">Trading</label><br /><br />
+          <p>Interests (Select all that apply):</p>
+          <input type="checkbox" id="sports" name="interests" value="sports" />
+          <label for="sports">Sports</label><br />
+          <input type="checkbox" id="music" name="interests" value="music" />
+          <label for="music">Music</label><br />
+          <input type="checkbox" id="travel" name="interests" value="travel" />
+          <label for="travel">Travel</label><br />
+          <input type="checkbox" id="reading" name="interests" value="reading" />
+          <label for="reading">Reading</label><br />
+          <input type="checkbox" id="gaming" name="interests" value="gaming" />
+          <label for="gaming">Gaming</label><br />
+          <input type="checkbox" id="cooking" name="interests" value="cooking" />
+          <label for="cooking">Cooking</label><br />
+          <input type="checkbox" id="technology" name="interests" value="technology" />
+          <label for="technology">Technology</label><br />
+          <input type="checkbox" id="trading" name="interests" value="trading" />
+          <label for="trading">Trading</label><br /><br />
 
-        <label for="label">Education Level:</label>
-        <select id="label" name="label" required>
-          <option value="select">--Select Educational Level Here--</option>
-          <option value="primary">Primary</option>
-          <option value="high school">High School</option>
-          <option value="course">Technical Course</option>
-          <option value="diploma">Diploma</option>
-          <option value="bachelors">Bachelors</option>
-          <option value="masters">Masters</option>
-          <option value="phd">PhD</option></select
-        ><br /><br />
+          <label for="label">Education Level:</label>
+          <select id="label" name="label" required>
+            <option value="select">--Select Educational Level Here--</option>
+            <option value="primary">Primary</option>
+            <option value="high school">High School</option>
+            <option value="course">Technical Course</option>
+            <option value="diploma">Diploma</option>
+            <option value="bachelors">Bachelors</option>
+            <option value="masters">Masters</option>
+            <option value="phd">PhD</option></select
+          ><br /><br />
 
-        <label for="pwd">Create Password:</label>
-        <input
-          type="password"
-          id="pwd"
-          name="pwd"
-          placeholder="12qwed/.,"
-          required
-        /><br /><br />
-        <label for="confirm">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirm"
-          name="confirm"
-          placeholder="12qwed/.,"
-          required
-        /><br /><br />
-      </section>
+          <label for="pwd">Create Password:</label>
+          <input
+            type="password"
+            id="pwd"
+            name="pwd"
+            placeholder="12qwed/.,"
+            autocomplete="new-password"
+            required
+          /><br /><br />
+          <label for="confirm">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm"
+            name="confirm"
+            placeholder="12qwed/.,"
+            autocomplete="new-password"
+            required
+          /><br /><br />
+        </fieldset>
+
   
 
 ```
 <br>
 
 
-6. Section: Feedback and Additional Information.
+6. Fieldset: Feedback and Additional Information.
 
 
 
 ```
-    <section>
-        <form action="submit_form.php" method="POST"></form>
-        <h4>Feedback & Additional Information</h4>
-        <label for="bio">Tell us about yourself:</label><br />
-        <textarea
-          id="bio"
-          name="bio"
-          rows="5"
-          cols="50"
-          placeholder="Write a brief description about yourself..."
-        ></textarea
-        ><br /><br />
+<fieldset>
+  <legend>Feedback & Additional Information</legend>
+  <label for="bio">Tell us about yourself:</label><br />
+  <textarea  id="bio" name="bio"  rows="5"  cols="50"       placeholder="Write a brief description about yourself..."  ><textarea>
+  <br /><br />
 
-        <label for="Information">Suggestions for improvement:</label><br />
-        <textarea
-          id="Information"
-          name="Information"
-          rows="5"
-          cols="50"
-          placeholder="Your suggestions..."
-        ></textarea
-        ><br /><br />
+  <label for="Information">Suggestions for improvement:</label><br />
+  <textarea  id="Information"  name="Information"  rows="5"  cols="50"  placeholder="Your suggestions..."  ></textarea>
+  <br /><br />
 
-        <label for="date">Registration Date & Time:</label>
-        <input type="datetime-local" id="date" name="date" /><br /><br />
+  <label for="date-register">Registration Date & Time:</label>
+  <input type="datetime-local" id="date-register"  name="date-register" />
+  <br /><br />
 
-        <label for="input">How did you hear about us:</label>
-        <select name="input" id="input">
-          <option value="select">--Select Source--</option>
-          <option value="friends">Friends & Family</option>
-          <option value="social media">Social Media</option>
-          <option value="posters">Posters</option>
-          <option value="online ads">Online Ads</option>
-          <br /><br /></select
-        ><br /><br />
+  <label for="input">How did you hear about us:</label>
+  <select name="input" id="input">
+    <option value="select">--Select Source--</option>
+    <option value="friends">Friends & Family</option>
+    <option value="social media">Social Media</option>
+    <option value="posters">Posters</option>
+    <option value="online ads">Online Ads</option>
+    <br /><br />
+  </select>
+  <br /><br />
 
-        <label for="resume">Upload Resume (Optional):</label>
-        <input type="file" id="resume" accept=".pdf,.doc,.docx" /><br /><br />
+  <label for="resume">Upload Resume (Optional):</label>
+  <input type="file" id="resume" accept=".pdf,.doc,.docx" />
+  <br><br />
 
-        <input type="checkbox" id="subscribe" name="subscribe" />
-        <label for="subscribe">Subscribe to Our Newsletter</label><br /><br />
+  <input type="checkbox" id="subscribe" name="subscribe" />
+  <label for="subscribe">Subscribe to Our Newsletter</label>
+  <br /><br />
 
-        <input type="checkbox" id="terms" name="terms" required />
-        <label for="terms">I agree to the Terms and Conditions</label
-        ><br /><br />
+  <input type="checkbox" id="terms" name="terms" required />
+  <label for="terms">I agree to the Terms and Conditions</label>
+  <br /><br />
 
-        <input type="checkbox" id="privacy" name="privacy" required />
-        <label for="privacy">I agree to the Privacy Policy</label><br /><br />
-      </section>
+  <input type="checkbox" id="privacy" name="privacy" required />
+  <label for="privacy">I agree to the Privacy Policy</label><br /><br />
+
+</fieldset>
 
 
 ```
@@ -634,8 +612,8 @@ buttons can perform various actions enhancing user interaction.
 ```
 
  <footer>
-      <button name="one" value="register">Register</button>
-      <button name="two" value="clear">Clear Form</button>
+    <button name="one" value="register">Register</button>
+    <button name="two" value="clear">Clear Form</button>
  </footer>
 
 ```
@@ -746,7 +724,7 @@ No vendor prefixes required — all features conform to the CSS3 standard.
 
 ##  Screenshots and Form Description
 
-<img src="screenshot.png" alt="Image of form document">
+<img src="forms.png" alt="Image of form document">
 
 ### Description
 The styled form presents a **light, minimalist interface** with vibrant accent shadows.  
