@@ -1,55 +1,53 @@
-<h3 align="center"><strong>User Registration Form Built With Semantic HTML & CSS</strong></h3> 
-<p align="center"> A complete guide to creating and styling semantic, accessible, and well-structured HTML forms. </p>
+<h1 align="center" style="text-decoration: underline;"><strong>User Registration Form Built With Semantic HTML & CSS</strong></h1>
 
-Overview
+<p align="center" style="font-style: italic;"> A complete guide to creating and styling semantic, accessible, and well-structured HTML forms. </p>
 
-This project demonstrates how to build a fully semantic registration form and apply professional, scalable CSS styling using:
+<h3 style="text-decoration: underline;">Overview</h3>
 
-Semantic HTML5 tags (header, main, fieldset, legend, footer)
+<p>This project demonstrates how to build a fully semantic registration form and apply professional, scalable CSS styling using:</p>
 
-Accessible form structure with correct labeling
+<ul>
+<li>Semantic HTML5 tags (header, main, fieldset, legend, footer)</li>
+<li>Accessible form structure with correct labeling</li>
+<li>CSS custom properties (variables)</li>
+<li>Responsive, consistent form controls</li>
+<li>Modern button styling, shadows, and interactive effects</li>
+</ul>
 
-CSS custom properties (variables)
+<p>The goal is to teach clear structure, accessibility, and clean styling architecture.</p>
 
-Responsive, consistent form controls
+<h3 style="text-decoration: underline;">Built With</h3>
+<ul>
+<li>Semantic HTML5</li>
+<li>CSS3 with Custom Properties</li>
+<li>No frameworks or external libraries</li>
+</ul>
 
-Modern button styling, shadows, and interactive effects
 
-The goal is to teach clear structure, accessibility, and clean styling architecture.
+<h3 style="text-decoration: underline;">Getting Started</h3>
 
-Built With
+<p>This documentation walks you through the structure and styling of the form found in:</p>
 
-Semantic HTML5
+<ul>
+<li>index.html </li>
+<li>styles.css </li>
+</ul>
 
-CSS3 with Custom Properties
+<p>You will learn:</p>
 
-No frameworks or external libraries
+<ul>
+<li>How the form is divided into meaningful semantic sections</li>
+<li>How inputs, labels, fieldsets, and legends work together</li>
+<li>How CSS variables create a scalable color system</li>
+<li>How the layout, spacing, borders, and shadows are applied</li>
+</ul>
 
-Getting Started
 
-This documentation walks you through the structure and styling of the form found in:
+<h3 style="text-decoration: underline;">1. Semantic HTML Structure</h3>
 
-index.html 
+<p>The form uses a clear hierarchical structure:</p>
 
-index
-
-styles.css 
-
-styles
-
-You will learn:
-
-How the form is divided into meaningful semantic sections
-
-How inputs, labels, fieldsets, and legends work together
-
-How CSS variables create a scalable color system
-
-How the layout, spacing, borders, and shadows are applied
-
-1. Semantic HTML Structure
-
-The form uses a clear hierarchical structure:
+```
 
 <!doctype html>
 <html lang="en">
@@ -68,257 +66,401 @@ The form uses a clear hierarchical structure:
   </body>
 </html>
 
-Why Semantic HTML?
+```
 
-Improves accessibility (screen readers understand the structure)
+<h3 style="text-decoration: underline;">Why Semantic HTML?</h3>
+<ul>
+<li>Improves accessibility (screen readers understand the structure)</li>
+<li>Improves SEO (logical content hierarchy)</li>
+<li>Improves maintainability (sections are clear and manageable)</li>
+<li>Supports consistent styling (fieldsets, legends, headers)</li>
 
-Improves SEO (logical content hierarchy)
+</ul>
 
-Improves maintainability (sections are clear and manageable)
 
-Supports consistent styling (fieldsets, legends, headers)
+<h3 style="text-decoration: underline;">2. Section-by-Section Explanation</h3>
 
-2. Section-by-Section Explanation
-A. Personal Information Fieldset
+<h4>A. Personal Information Fieldset</h4>
 
 Contains fundamental personal details:
+<ul>
+<li>Text inputs (first name, last name, age)</li>
+<li>Date picker (date of birth)</li>
+<li>Radio inputs (gender)</li>
+<li>File input (profile photo)</li>
 
-Text inputs (first name, last name, age)
+</ul>
 
-Date picker (date of birth)
+<h4>Key techniques used:</h4>
+<li>Every _"label"_ is linked to its _"input"_ via _"for"_ + _"id"_</li>
+<li>Uses appropriate input types (text, date, radio, file)</li>
+<li>Autocomplete attributes enhance user experience and accessibility</li>
 
-Radio inputs (gender)
-
-File input (profile photo)
-
-Key techniques used:
-
-Every <label> is linked to its <input> via for + id
-
-Uses appropriate input types (text, date, radio, file)
-
-Autocomplete attributes enhance user experience and accessibility
-
-B. Contact Information Fieldset
+<h4>B. Contact Information Fieldset</h4>
 
 Uses a mix of:
 
-Email + phone inputs
+<ul>
+<li>Email + phone inputs</li>
+<li>URL input for personal website</li>
+<li>Dropdown (select) to choose a country
+</li>
+<li>Address-related fields (city, street, postal code)</li>
+<li>Time input for preferred contact time</li>
 
-URL input for personal website
+</ul>
 
-Dropdown (select) to choose a country
+<h4>Dropdown (select) details:</h4>
 
-Address-related fields (city, street, postal code)
-
-Time input for preferred contact time
-
-Dropdown (select) details:
+```
 
 <select id="country" name="country">
   <option value="kenya">Kenya</option>
-  …
 </select>
+
+```
 
 
 Attributes used:
 
-Attribute	Purpose
-name	Defines the form submission key
-value	Value sent to backend
-required	Ensures user selection
-autocomplete	Guides browser autofill
-C. Preferences & Interests
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>type</code></td>
+      <td>Specifies the input control type</td>
+      <td><code>type="email"</code></td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>Unique identifier; paired with label</td>
+      <td><code>id="first-name"</code></td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>Key used when form submits</td>
+      <td><code>name="email"</code></td>
+    </tr>
+    <tr>
+      <td><code>placeholder</code></td>
+      <td>Inline hint text for the user</td>
+      <td><code>placeholder="Enter name"</code></td>
+    </tr>
+    <tr>
+      <td><code>value</code></td>
+      <td>Pre-filled default value</td>
+      <td><code>value="Kenya"</code></td>
+    </tr>
+    <tr>
+      <td><code>required</code></td>
+      <td>Makes the field mandatory</td>
+      <td><code>required</code></td>
+    </tr>
+    <tr>
+      <td><code>autocomplete</code></td>
+      <td>Browser autofill suggestions</td>
+      <td><code>autocomplete="email"</code></td>
+    </tr>
+    <tr>
+      <td><code>disabled</code></td>
+      <td>Disables user interaction</td>
+      <td><code>disabled</code></td>
+    </tr>
+    <tr>
+      <td><code>readonly</code></td>
+      <td>Prevents editing but stays visible</td>
+      <td><code>readonly</code></td>
+    </tr>
+    <tr>
+      <td><code>min</code> / <code>max</code></td>
+      <td>Range limits (numbers, dates)</td>
+      <td><code>min="1" max="10"</code></td>
+    </tr>
+    <tr>
+      <td><code>step</code></td>
+      <td>Step increment for sliders/opinions</td>
+      <td><code>step="1"</code></td>
+    </tr>
+    <tr>
+      <td><code>accept</code></td>
+      <td>Accepted file types in file inputs</td>
+      <td><code>accept=".pdf,.doc"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>C. Preferences & Interests</h4>
 
 Demonstrates more advanced input types:
+<ul>
+<li>Color picker (type="color")</li>
+<li>Range slider (type="range")</li>
+<li>Date inputs</li>
+<li>Search input</li>
+<li>Multiple checkboxes</li>
+<li>Education level dropdown</li>
+<li>Password + confirm-password fields</li>
 
-Color picker (type="color")
-
-Range slider (type="range")
-
-Date inputs
-
-Search input
-
-Multiple checkboxes
-
-Education level dropdown
-
-Password + confirm-password fields
+</ul>
 
 This fieldset shows how to combine many input types while keeping structure clear and accessible.
 
-D. Feedback & Additional Information
+<h4>D. Feedback & Additional Information</h4>
 
 Includes:
 
-Two textareas
+<ul>
+<li>Two textareas</li>
+<li>Date-time input</li>
+<li>Source of referral dropdown</li>
+<li>File upload (resume)</li>
+<li>Newsletter and policy checkboxes</li>
 
-Date-time input
-
-Source of referral dropdown
-
-File upload (resume)
-
-Newsletter and policy checkboxes
-
+</ul>
 The section teaches how to work with multi-line text, optional fields, and required agreement boxes.
 
-E. Footer Button Section
+
+<h4>E. Footer Button Section</h4>
+
+```
 <button name="one" value="register">Register</button>
 <button name="two" value="clear">Clear Form</button>
 
+```
 
 The footer wraps the form actions, keeping structure clean and predictable.
 
-3. CSS Styling System
+<h3 style="text-decoration: underline;">3. CSS Styling System</h3>
 
 All styles originate in styles.css and follow a modular structure using CSS variables.
 
-CSS Variable System (Color Palette)
+<h4>CSS Variable System (Color Palette)</h4>
 
 Defined in :root:
 
-Variable	Purpose	Value
---color-bg	Page background	#f9fafb
---color-border	Input/fieldset borders	#d1d5db
---color-text-muted	Subtle text	#6b7280
---color-primary	Main blue	#2563eb
---color-primary-light	Light blue hover	#3b82f6
---color-primary-dark	Deep hover blue	#1e40af
---color-accent-violet	Violet accent	#8b5cf6
---color-accent-pink	Pink accent	#ec4899
---shadow-primary	Dual-color shadow	violet + pink
-Why Variables?
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+      <th>Hex Value</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--color-bg</code></td>
+      <td>Background color</td>
+      <td>#f9fafb</td>
+      <td>Body background</td>
+    </tr>
+    <tr>
+      <td><code>--color-border</code></td>
+      <td>Border color</td>
+      <td>#d1d5db</td>
+      <td>Inputs, fieldsets, layout borders</td>
+    </tr>
+    <tr>
+      <td><code>--color-text-muted</code></td>
+      <td>Muted text</td>
+      <td>#6b7280</td>
+      <td>Footer text, subtle labels</td>
+    </tr>
+    <tr>
+      <td><code>--color-primary</code></td>
+      <td>Main blue</td>
+      <td>#2563eb</td>
+      <td>Buttons</td>
+    </tr>
+    <tr>
+      <td><code>--color-primary-light</code></td>
+      <td>Light blue hover</td>
+      <td>#3b82f6</td>
+      <td>Register button hover</td>
+    </tr>
+    <tr>
+      <td><code>--color-primary-dark</code></td>
+      <td>Deep blue hover</td>
+      <td>#1e40af</td>
+      <td>Clear button hover</td>
+    </tr>
+    <tr>
+      <td><code>--color-accent-violet</code></td>
+      <td>Accent violet</td>
+      <td>#8b5cf6</td>
+      <td>File input, color picker</td>
+    </tr>
+    <tr>
+      <td><code>--color-accent-pink</code></td>
+      <td>Accent pink</td>
+      <td>#ec4899</td>
+      <td>Shadow highlight</td>
+    </tr>
+    <tr>
+      <td><code>--shadow-primary</code></td>
+      <td>Dual-tone shadow</td>
+      <td>Violet + Pink</td>
+      <td>Form container shadow</td>
+    </tr>
+  </tbody>
+</table>
 
-Cleaner, centralized control
+<h4>Why Variables?</h4>
 
-Easy theme updates
+<ul>
+<li>Cleaner, centralized control</li>
+<li>Easy theme updates</li>
+<li>Consistent color usage</li>
+<li>Professional design workflow</li>
 
-Consistent color usage
+</ul>
 
-Professional design workflow
+<h3 style="text-decoration: underline;">4. Form Layout & Element Styling</h3>
 
-🖌 4. Form Layout & Element Styling
 Body Container
 
 Uses:
 
-Max-width: 600px
+<ul>
+<li>Max-width: 600px</li>
+<li>Interior padding</li>
+<li>Border + soft dual shadow</li>
+<li>Background controlled by variables</li>
 
-Interior padding
+</ul>
 
-Border + soft dual shadow
-
-Background controlled by variables
-
-Input Styling
+<h4>Input Styling</h4>
 
 All text-like inputs share:
 
-Consistent border
+<ul>
+<li>Consistent border</li>
+<li>40% width</li>
+<li>16px font</li>
+<li>10px padding</li>
+<li>Pointer cursor (interactive feel)
+</li>
+</ul>
 
-40% width
+<h4>Select Inputs</h4>
 
-16px font
+<ul>
+<li>Wider (50%)</li>
+<li>Larger height (40px)</li>
+<li>Clear clickable styling</li>
 
-10px padding
+</ul>
 
-Pointer cursor (interactive feel)
+<h4>Textareas</h4>
 
-Select Inputs
+<ul>
+<li>90% width</li>
+<li>Consistent padding</li>
+<li>110px height</li>
+<li>Muted bordered style</li>
 
-Wider (50%)
-
-Larger height (40px)
-
-Clear clickable styling
-
-Textareas
-
-90% width
-
-Consistent padding
-
-110px height
-
-Muted bordered style
-
-Range Slider
+<h4>Range Slider</h4>
 
 Fully custom-restyled for:
 
-WebKit
+<ul>
+<li>WebKit</li>
+<li>Firefox</li>
+<li>Edge/IE</li>
 
-Firefox
-
-Edge/IE
+</ul>
 
 Includes:
 
-Custom track
+<ul>
+<li>Custom track</li>
+<li>Custom thumb</li>
+<li>Hover enlargement</li>
+<li>Clean color usage</li>
 
-Custom thumb
+</ul>
 
-Hover enlargement
 
-Clean color usage
-
-File & Color Inputs
+<h4>File & Color Inputs</h4>
 
 Styled using accent colors:
 
+```
 background-color: var(--color-accent-violet);
 color: white;
 padding: 10px 20px;
 
-Buttons
+```
+
+<h4>Buttons</h4>
+
+```
 background-color: var(--color-primary);
 transition: background-color 0.5s ease;
 
+```
+
 
 Hover states:
+<ul>
+<li>Register → primary-light (blue)</li>
+<li>Clear → primary-dark (deep blue)</li>
 
-Register → primary-light (blue)
+</ul>
 
-Clear → primary-dark (deep blue)
 
-5. Design Principles Used
-✔ Semantic structure
-✔ Consistent spacing and alignment
-✔ Variable-driven color architecture
-✔ Clean visual hierarchy
-✔ Accessible input types
-✔ Minimalist modern UI
+<h3 style="text-decoration: underline;">5. Design Principles Used</h3>
+✔ Semantic structure<br>
+✔ Consistent spacing and alignment<br>
+✔ Variable-driven color architecture<br>
+✔ Clean visual hierarchy<br>
+✔ Accessible input types<br>
+✔ Minimalist modern UI<br>
 
-Screenshot
+<h3 style="text-decoration: underline;">Form Preview Screenshot</h3>
 <img src="forms.png" alt="Form Preview">
 
-Usage
+<h3 style="text-decoration: underline;">Usage</h3>
 
-Use this template to build clean, extensible, semantic forms.
+Use this template to build clean, extensible, semantic forms.<br>
 Semantic HTML provides:
 
-Better accessibility
+<ul>
+<li>Better accessibility</li>
+<li>Cleaner developer workflow</li>
+<li>Improved search engine indexing</li>
+<li>Easier maintenance and upgrades</li>
 
-Cleaner developer workflow
+</ul>
 
-Improved search engine indexing
+<h3 style="text-decoration: underline;">Contributing</h3>
 
-Easier maintenance and upgrades
+Contributions are welcome!<br>
+<i style="text-decoration: underline double; font-weight: bold;">Fork → Branch → Commit → PR.</i>
 
-Contributing
+<h3 style="text-decoration: underline;">Contact</h3>
 
-Contributions are welcome!
-Fork → Branch → Commit → PR.
+<h3 style="font-weight: bold;">Carlos Kimuyu</h3>
 
-Contact
-
-Carlos Kimuyu
 Programming Student | Clean & Modern Web Design
 
-X: https://twitter.com/@KimuyuCarlos
+### Contact
 
-Email: kimuyuboh@gmail.com
+- **X (Twitter):** [@KimuyuCarlos](https://twitter.com/KimuyuCarlos)
 
-Project Repo: https://github.com/kimuyuboh-blip/Forms.git
+- **Email:** [kimuyuboh@gmail.com](mailto:kimuyuboh@gmail.com)
+
+- **Project Repository:** [github.com/kimuyuboh-blip/Forms](https://github.com/kimuyuboh-blip/Forms.git)
+
+
+
+
+
+
